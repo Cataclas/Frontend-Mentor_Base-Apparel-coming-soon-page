@@ -1,0 +1,279 @@
+:root {
+    /* White */
+    --white: hsl(0deg 0% 100%);
+    /* Dark */
+    --dark: hsl(210deg 11% 15%);
+    /* Desaturated Red */
+    --primary-one: hsl(0, 36%, 70%);
+    /* Soft Red */
+    --primary-two: hsl(0, 93%, 68%);
+    /* Dark Grayish Red */
+    --neutral-one: hsl(0, 6%, 24%);
+    /* Gradient-one */
+    --gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    /* Gradient two */
+    --gradient-two: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    left: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: var(--gradient-one);
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+header {
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.header__logo {
+    height: 21px;
+    padding: 0 .5rem;
+    margin-top: .5rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.footer {
+    position: fixed;
+    padding: .25rem;
+    color: var(--white);
+    background: var(--dark);
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer__attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.footer__link {
+    color: var(--primary-one);
+    text-decoration: none;
+}
+
+.subscription {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.subscription__title {
+    font-size: 2.5rem;
+    letter-spacing: .7rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--neutral-one);
+}
+
+.subscription__title--emphasis {
+    display: block;
+    color: var(--primary-one);
+    font-weight: 300;
+}
+
+.subscription__text {
+    line-height: 1.4rem;
+    letter-spacing: -.8px;
+    padding: .3rem;
+    margin: 1rem 0 1.5rem 0;
+    color: var(--primary-one);
+}
+
+.input-group-button {
+    position: relative;
+    height: 3rem;
+    margin: 0 .5rem;
+}
+
+.input-group__input {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    padding: 0 1.5rem;
+    background: transparent;
+    border: 1px solid var(--primary-one);
+}
+
+.input-group__input::placeholder {
+    color: var(--primary-one);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.input-group__input:focus {
+    outline: none;
+    box-shadow: 0 0 .5rem var(--primary-one);
+}
+
+.input-group__button {
+    position: absolute;
+    background: var(--gradient-two);
+    border: none;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4rem;
+    margin-left: auto;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2rem 3rem -1rem var(--primary-one);
+}
+
+.input-group__button:hover {
+    opacity: .7;
+}
+
+.input-group__button:focus {
+    outline: none;
+    box-shadow: 0 0 1rem var(--primary-one);
+}
+
+.input-group-button__msg {
+    color: var(--primary-two);
+    display: block;
+    text-align: left;
+    padding: .25rem 1.5rem;
+    font-size: small;
+}
+
+input.error {
+    border: 2px solid var(--primary-two);
+}
+
+input.error+img {
+    display: flex;
+}
+
+.input-group__icon--error {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 4.5rem;
+    margin-left: auto;
+    height: 100%;
+    padding: 1rem 0;
+}
+
+.section__image--mobile {
+    display: block;
+    height: 250px;
+    width: 100%;
+    background: url(../images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.section__image--desktop {
+    display: none;
+}
+
+@media (min-width: 700px) {
+    body {
+        background: url(../images/bg-pattern-desktop.svg), var(--gradient-one);
+    }
+    main {
+        height: 100%;
+    }
+    .section {
+        flex-direction: row;
+        min-height: 100%;
+    }
+    .header__logo {
+        height: 2rem;
+        margin: 2.5rem 0 0 2rem;
+        padding: 0;
+    }
+    header {
+        position: fixed;
+    }
+    .subscription {
+        width: 58%;
+    }
+    .subscription__title {
+        width: 100%;
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+        margin: 6rem auto 1rem auto;
+        letter-spacing: 1.1rem;
+    }
+    .subscription__text {
+        font-size: large;
+        width: 90%;
+        margin: 0 auto 2.5rem auto;
+        line-height: 1.8rem;
+        padding: 0;
+    }
+    .section__image--mobile {
+        display: none;
+    }
+    .section__image--desktop {
+        width: 42%;
+        background: url(../images/hero-desktop.jpg);
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .input-group-button {
+        height: 3.5rem;
+        width: 90%;
+        margin: 0 auto 0 auto;
+    }
+    .input-group__button {
+        width: 7rem;
+    }
+    .input-group__icon--error {
+        right: 7.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .subscription__title {
+        width: 65%;
+        text-align: left;
+        font-size: 4rem;
+        margin: 11rem auto 1rem auto;
+    }
+    .subscription__text {
+        width: 65%;
+        padding: 0 4rem 0 0;
+        text-align: left;
+    }
+    .input-group-button {
+        width: 65%;
+    }
+    .input-group-button {
+        padding-right: 4rem;
+    }
+    .input-group__button {
+        margin-right: 4rem;
+    }
+    .input-group__icon--error {
+        right: 11.5rem;
+    }
+    .header__logo {
+        margin: 2.5rem 0 0 9rem;
+    }
+}
